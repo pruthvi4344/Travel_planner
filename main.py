@@ -89,8 +89,11 @@ def main():
 
     #  Handle greeting responses
     if state.response:
-        print("\n🤖 AI Response:", state.response)
-        return  # Stops execution if it's just a greeting
+     print("\n🤖 AI Response:", state.response)
+    
+    # If it's a greeting, continue asking for trip details
+     state.user_input = input("\n📝 Tell me about your trip (budget, duration, interests): ")
+     state = extract_preferences(state)
 
     #  Check if preferences were extracted
     if not state.preferences or not any(state.preferences.values()):
