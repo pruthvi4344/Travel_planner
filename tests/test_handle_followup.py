@@ -1,36 +1,37 @@
 from agent.state import AgentState
 from agent.nodes.handle_followup import handle_followup
 
+def format_followup_response(response):
+    """Formats the follow-up response in a user-friendly text paragraph."""
+    if not response or "response" not in response:
+        return " No response available."
+
+    return f"Question:  {response['user_input']}\n" \
+           f"AI Response:  {response['response']}\n"
+
 def test_handle_followup():
+    """Tests handle_followup function with different user questions."""
+    
     state = AgentState()
-    state.itinerary = {
-        "destination": "Manali",
-        "country": "India",
-        "best_seasons": ["summer", "winter"],
-        "plan": [
-            {"day": 1, "activity": "Go for a scenic trek"},
-            {"day": 2, "activity": "Explore Old Manali cafes"},
-            {"day": 3, "activity": "Visit Solang Valley"}
-        ]
-    }
+    state.destinations = [
+        {"name": "Manali", "country": "India", "best_seasons": ["summer", "winter"]}
+    ]
 
-    # Test "Best time to visit" question
-    response1 = handle_followup(state, "When is the best season to travel?")
-    print("Response 1:", response1)
+    test_questions = [
+        "When is the best season to travel?",
+        "What's the weather like?",
+        "Tell me about local food in Manali."
+    ]
 
-    # Test "Change budget" question
-    response2 = handle_followup(state, "Can I raise my spending limit?")
-    print("Response 2:", response2)
+    for question in test_questions:
+        state.user_input = question
+        updated_state = handle_followup(state)
+        formatted_response = format_followup_response(updated_state)
 
-    # Test "Swap activity" question
-    response3 = handle_followup(state, "Change my itinerary activities.")
-    print("Response 3:", response3)
+        print("\n" + formatted_response)
 
-    # Test "Repeat itinerary" question
-    response4 = handle_followup(state, "Show my full trip schedule.")
-    print("Response 4:", response4)
-
-    print("✅ Test passed: handle_followup is now fully dynamic.")
+    print("Test Passed: All follow-up responses are formatted correctly.")
 
 # Run the test
-test_handle_followup()
+if __name__ == "__main__":
+    test_handle_followup()

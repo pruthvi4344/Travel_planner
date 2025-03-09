@@ -1,29 +1,65 @@
 from agent.state import AgentState
 from agent.nodes.create_itinerary import create_itinerary
 
+def format_itinerary_text(itinerary):
+    """Convert itinerary into a user-friendly text paragraph."""
+    if not itinerary or "plan" not in itinerary:
+        return " No itinerary available."
+
+    text_message = f"📍 Your {len(itinerary['plan'])}-day itinerary for *{itinerary['destination']}*:\n\n"
+    
+    for day in itinerary["plan"]:
+        text_message += (
+            f"📅 *Day {day['day']}: {day['title']}*\n"
+            f"👉 {day['description']}\n"
+            f"🎯 Activities: {', '.join(day.get('activities', []))}\n\n"
+        )
+    
+    return text_message.strip()
+
 def test_create_itinerary():
-    state = AgentState()
-    state.preferences = {"duration": 5}  # User wants a 5-day trip
-    state.destinations = [
-        {
-            "name": "Manali",
-            "country": "India",
-            "tags": ["mountain", "adventure", "hiking", "photography"],
-            "budget_range": [20000, 60000],
-            "ideal_duration": [3, 7],
-            "best_seasons": ["summer", "winter"]
-        }
+    """Test create_itinerary function with different inputs."""
+
+    test_cases = [
+        #  Valid case: Should generate an itinerary
+        ({
+            "duration": 5,
+        }, [ {
+      "name": "Tokyo",
+      "country": "Japan",
+      "tags": ["technology", "culture", "food", "shopping"],
+      "budget_range": [120000, 250000],
+      "ideal_duration": [5, 10],
+      "best_seasons": ["spring", "fall"]
+  }], True),
+
+        # invalid case: No destination provided (should return empty itinerary)
+        ({
+            "duration": 4,
+        }, [], False)
     ]
 
-    updated_state = create_itinerary(state)
+    for preferences, destinations, should_generate in test_cases:
+        state = AgentState()
+        state.preferences = preferences
+        state.destinations = destinations  # Set destination list dynamically
 
-    print("\nGenerated Itinerary:", updated_state.itinerary)  # Debug output
+        updated_state = create_itinerary(state)
+        itinerary_text = format_itinerary_text(updated_state.get("itinerary", {}))
 
-    assert "destination" in updated_state.itinerary
-    assert len(updated_state.itinerary["plan"]) == 5  # Check correct number of days
-    assert "activity" in updated_state.itinerary["plan"][0]  # Check activity presence
+        print("\n Test Preferences:", preferences)
+        print("📜 **Generated Itinerary Message:**\n", itinerary_text)
 
-    print("✅ Test passed: create_itinerary generates a correct itinerary.")
+        if should_generate:
+            assert "destination" in updated_state["itinerary"], "Missing 'destination' in itinerary!"
+            assert len(updated_state["itinerary"]["plan"]) == preferences["duration"], " Incorrect number of days!"
+            assert "title" in updated_state["itinerary"]["plan"][0], " Missing 'title' in first day!"
+            assert "description" in updated_state["itinerary"]["plan"][0], " Missing 'description' in first day!"
+        else:
+            assert "itinerary" not in updated_state or not updated_state["itinerary"], " Itinerary should be empty!"
+
+        print(" Test Passed!")
 
 # Run the test
-test_create_itinerary()
+if __name__ == "__main__":
+    test_create_itinerary()
