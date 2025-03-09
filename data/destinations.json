@@ -1,0 +1,418 @@
+[
+  {
+      "name": "Paris",
+      "country": "France",
+      "tags": ["romantic", "culture", "food", "photography"],
+      "budget_range": [80000, 200000],
+      "ideal_duration": [3, 7],
+      "best_seasons": ["spring", "fall"]
+  },
+  {
+      "name": "Bangkok",
+      "country": "Thailand",
+      "tags": ["beach", "nightlife", "street food", "shopping"],
+      "budget_range": [30000, 70000],
+      "ideal_duration": [5, 10],
+      "best_seasons": ["winter"]
+  },
+  {
+      "name": "Manali",
+      "country": "India",
+      "tags": ["mountain", "adventure", "hiking", "photography"],
+      "budget_range": [10000, 60000],
+      "ideal_duration": [3, 7],
+      "best_seasons": ["summer", "winter"]
+  },
+  {
+      "name": "Dubai",
+      "country": "UAE",
+      "tags": ["luxury", "shopping", "nightlife", "photography"],
+      "budget_range": [100000, 300000],
+      "ideal_duration": [4, 8],
+      "best_seasons": ["winter"]
+  },
+  {
+      "name": "Tokyo",
+      "country": "Japan",
+      "tags": ["technology", "culture", "food", "shopping"],
+      "budget_range": [120000, 250000],
+      "ideal_duration": [5, 10],
+      "best_seasons": ["spring", "fall"]
+  },
+  {
+      "name": "Rio de Janeiro",
+      "country": "Brazil",
+      "tags": ["beach", "carnival", "nightlife", "adventure"],
+      "budget_range": [70000, 150000],
+      "ideal_duration": [4, 8],
+      "best_seasons": ["summer", "fall"]
+  },
+  {
+      "name": "Cape Town",
+      "country": "South Africa",
+      "tags": ["nature", "adventure", "wine", "photography"],
+      "budget_range": [60000, 140000],
+      "ideal_duration": [5, 10],
+      "best_seasons": ["spring", "summer"]
+  },
+  {
+      "name": "Reykjavik",
+      "country": "Iceland",
+      "tags": ["nature", "adventure", "photography", "northern lights"],
+      "budget_range": [150000, 300000],
+      "ideal_duration": [4, 8],
+      "best_seasons": ["summer", "winter"]
+  },
+  {
+      "name": "Sydney",
+      "country": "Australia",
+      "tags": ["beach", "culture", "adventure", "photography"],
+      "budget_range": [100000, 220000],
+      "ideal_duration": [5, 10],
+      "best_seasons": ["spring", "fall"]
+  },
+  {
+      "name": "Marrakech",
+      "country": "Morocco",
+      "tags": ["culture", "history", "shopping", "photography"],
+      "budget_range": [40000, 100000],
+      "ideal_duration": [3, 7],
+      "best_seasons": ["spring", "fall"]
+  },
+  {
+      "name": "New York City",
+      "country": "USA",
+      "tags": ["urban", "culture", "shopping", "nightlife"],
+      "budget_range": [150000, 300000],
+      "ideal_duration": [4, 8],
+      "best_seasons": ["spring", "fall"]
+  },
+  {
+      "name": "Amsterdam",
+      "country": "Netherlands",
+      "tags": ["culture", "history", "nightlife", "photography"],
+      "budget_range": [80000, 180000],
+      "ideal_duration": [3, 7],
+      "best_seasons": ["spring", "summer"]
+  },
+  {
+      "name": "Queenstown",
+      "country": "New Zealand",
+      "tags": ["adventure", "nature", "sports", "photography"],
+      "budget_range": [100000, 200000],
+      "ideal_duration": [5, 10],
+      "best_seasons": ["summer", "fall"]
+  },
+  {
+      "name": "Barcelona",
+      "country": "Spain",
+      "tags": ["culture", "beach", "food", "nightlife"],
+      "budget_range": [70000, 160000],
+      "ideal_duration": [4, 8],
+      "best_seasons": ["spring", "summer"]
+  },
+  {
+      "name": "Hanoi",
+      "country": "Vietnam",
+      "tags": ["culture", "history", "food", "photography"],
+      "budget_range": [30000, 70000],
+      "ideal_duration": [3, 7],
+      "best_seasons": ["fall", "winter"]
+  },
+  {
+      "name": "Venice",
+      "country": "Italy",
+      "tags": ["romantic", "culture", "history", "photography"],
+      "budget_range": [80000, 180000],
+      "ideal_duration": [3, 6],
+      "best_seasons": ["spring", "fall"]
+  },
+  {
+      "name": "Santorini",
+      "country": "Greece",
+      "tags": ["romantic", "beach", "photography", "relaxation"],
+      "budget_range": [70000, 160000],
+      "ideal_duration": [3, 7],
+      "best_seasons": ["spring", "summer"]
+  },
+  {
+      "name": "Machu Picchu",
+      "country": "Peru",
+      "tags": ["adventure", "history", "hiking", "photography"],
+      "budget_range": [60000, 140000],
+      "ideal_duration": [4, 8],
+      "best_seasons": ["spring", "fall"]
+  },
+  {
+      "name": "Bali",
+      "country": "Indonesia",
+      "tags": ["beach", "culture", "relaxation", "photography"],
+      "budget_range": [40000, 100000],
+      "ideal_duration": [5, 10],
+      "best_seasons": ["spring", "summer"]
+  },
+  {
+      "name": "Prague",
+      "country": "Czech Republic",
+      "tags": ["culture", "history", "architecture", "nightlife"],
+      "budget_range": [50000, 120000],
+      "ideal_duration": [3, 7],
+      "best_seasons": ["spring", "fall"]
+  },
+  {
+      "name": "Jaipur",
+      "country": "India",
+      "tags": ["culture", "history", "architecture", "shopping"],
+      "budget_range": [25000, 60000],
+      "ideal_duration": [3, 6],
+      "best_seasons": ["fall", "winter"]
+  },
+  {
+      "name": "Goa",
+      "country": "India",
+      "tags": ["beach", "nightlife", "relaxation", "water sports"],
+      "budget_range": [20000, 60000],
+      "ideal_duration": [4, 8],
+      "best_seasons": ["winter"]
+  },
+  {
+      "name": "Kerala",
+      "country": "India",
+      "tags": ["nature", "beach", "culture", "relaxation"],
+      "budget_range": [25000, 70000],
+      "ideal_duration": [5, 10],
+      "best_seasons": ["winter"]
+  },
+  {
+      "name": "Agra",
+      "country": "India",
+      "tags": ["history", "architecture", "culture", "photography"],
+      "budget_range": [20000, 50000],
+      "ideal_duration": [2, 4],
+      "best_seasons": ["fall", "winter"]
+  },
+  {
+      "name": "Varanasi",
+      "country": "India",
+      "tags": ["spiritual", "culture", "history", "photography"],
+      "budget_range": [15000, 40000],
+      "ideal_duration": [3, 5],
+      "best_seasons": ["fall", "winter"]
+  },
+  {
+      "name": "Ladakh",
+      "country": "India",
+      "tags": ["adventure", "nature", "culture", "photography"],
+      "budget_range": [30000, 80000],
+      "ideal_duration": [7, 14],
+      "best_seasons": ["summer"]
+  },
+  {
+      "name": "Rome",
+      "country": "Italy",
+      "tags": ["history", "culture", "food", "architecture"],
+      "budget_range": [80000, 180000],
+      "ideal_duration": [4, 8],
+      "best_seasons": ["spring", "fall"]
+  },
+  {
+      "name": "Cairo",
+      "country": "Egypt",
+      "tags": ["history", "culture", "architecture", "desert"],
+      "budget_range": [50000, 120000],
+      "ideal_duration": [4, 7],
+      "best_seasons": ["fall", "winter"]
+  },
+  {
+      "name": "Marrakesh",
+      "country": "Morocco",
+      "tags": ["culture", "history", "shopping", "photography"],
+      "budget_range": [40000, 100000],
+      "ideal_duration": [3, 7],
+      "best_seasons": ["spring", "fall"]
+  },
+  {
+      "name": "Siem Reap",
+      "country": "Cambodia",
+      "tags": ["history", "culture", "temples", "photography"],
+      "budget_range": [30000, 70000],
+      "ideal_duration": [3, 6],
+      "best_seasons": ["fall", "winter"]
+  },
+  {
+      "name": "Petra",
+      "country": "Jordan",
+      "tags": ["history", "architecture", "adventure", "photography"],
+      "budget_range": [60000, 140000],
+      "ideal_duration": [3, 5],
+      "best_seasons": ["spring", "fall"]
+  },
+  {
+      "name": "Hoi An",
+      "country": "Vietnam",
+      "tags": ["culture", "history", "beach", "photography"],
+      "budget_range": [30000, 70000],
+      "ideal_duration": [3, 6],
+      "best_seasons": ["spring", "fall"]
+  },
+  {
+      "name": "Santorini",
+      "country": "Greece",
+      "tags": ["romantic", "beach", "photography", "relaxation"],
+      "budget_range": [70000, 160000],
+      "ideal_duration": [3, 7],
+      "best_seasons": ["spring", "summer"]
+  },
+  {
+      "name": "Florence",
+      "country": "Italy",
+      "tags": ["art", "history", "culture", "food"],
+      "budget_range": [70000, 160000],
+      "ideal_duration": [3, 6],
+      "best_seasons": ["spring", "fall"]
+  },
+  {
+      "name": "Edinburgh",
+      "country": "Scotland",
+      "tags": ["history", "culture", "architecture", "nightlife"],
+      "budget_range": [60000, 140000],
+      "ideal_duration": [3, 6],
+      "best_seasons": ["spring", "summer"]
+  },
+  {
+      "name": "Budapest",
+      "country": "Hungary",
+      "tags": ["history", "culture", "architecture", "nightlife"],
+      "budget_range": [50000, 120000],
+      "ideal_duration": [3, 6],
+      "best_seasons": ["spring", "fall"]
+  },
+  {
+      "name": "Lisbon",
+      "country": "Portugal",
+      "tags": ["culture", "history", "food", "photography"],
+      "budget_range": [60000, 140000],
+      "ideal_duration": [3, 6],
+      "best_seasons": ["spring", "fall"]
+  },
+  {
+      "name": "Zurich",
+      "country": "Switzerland",
+      "tags": ["nature", "culture", "luxury", "adventure"],
+      "budget_range": [100000, 220000],
+      "ideal_duration": [3, 6],
+      "best_seasons": ["spring", "summer"]
+  },
+  {
+      "name": "Vienna",
+      "country": "Austria",
+      "tags": ["culture", "history", "music", "architecture"],
+      "budget_range": [70000, 160000],
+      "ideal_duration": [3, 6],
+      "best_seasons": ["spring", "fall"]
+  },
+  {
+      "name": "Munich",
+      "country": "Germany",
+      "tags": ["culture", "history", "beer", "festivals"],
+      "budget_range": [70000, 160000],
+      "ideal_duration": [3, 6],
+      "best_seasons": ["spring", "fall"]
+  },
+  {
+      "name": "Stockholm",
+      "country": "Sweden",
+      "tags": ["culture", "history", "nature", "design"],
+      "budget_range": [80000, 180000],
+      "ideal_duration": [3, 6],
+      "best_seasons": ["spring", "summer"]
+  },
+  {
+      "name": "Bruges",
+      "country": "Belgium",
+      "tags": ["history", "culture", "architecture", "photography"],
+      "budget_range": [60000, 140000],
+      "ideal_duration": [2, 4],
+      "best_seasons": ["spring", "fall"]
+  },
+  {
+      "name": "Darjeeling",
+      "country": "India",
+      "tags": ["nature", "mountain", "tea", "photography"],
+      "budget_range": [20000, 50000],
+      "ideal_duration": [3, 5],
+      "best_seasons": ["spring", "fall"]
+  },
+  {
+      "name": "Shimla",
+      "country": "India",
+      "tags": ["mountain", "nature", "history", "photography"],
+      "budget_range": [20000, 50000],
+      "ideal_duration": [3, 5],
+      "best_seasons": ["summer", "winter"]
+  },
+  {
+      "name": "Mysore",
+      "country": "India",
+      "tags": ["culture", "history", "architecture", "photography"],
+      "budget_range": [20000, 50000],
+      "ideal_duration": [2, 4],
+      "best_seasons": ["fall", "winter"]
+  },
+  {
+      "name": "Ooty",
+      "country": "India",
+      "tags": ["nature", "mountain", "relaxation", "photography"],
+      "budget_range": [20000, 50000],
+      "ideal_duration": [3, 5],
+      "best_seasons": ["spring", "summer"]
+  },
+  {
+      "name": "Ranthambore",
+      "country": "India",
+      "tags": ["wildlife", "nature", "adventure", "photography"],
+      "budget_range": [25000, 60000],
+      "ideal_duration": [3, 5],
+      "best_seasons": ["fall", "winter"]
+  },
+  {
+      "name": "Kashmir",
+      "country": "India",
+      "tags": ["nature", "mountain", "adventure", "photography"],
+      "budget_range": [30000, 80000],
+      "ideal_duration": [5, 10],
+      "best_seasons": ["spring", "summer"]
+  },
+  {
+      "name": "Kolkata",
+      "country": "India",
+      "tags": ["culture", "history", "food", "festivals"],
+      "budget_range": [20000, 50000],
+      "ideal_duration": [3, 5],
+      "best_seasons": ["fall", "winter"]
+  },
+  {
+      "name": "Cappadocia",
+      "country": "Turkey",
+      "tags": ["nature", "adventure", "history", "photography"],
+      "budget_range": [50000, 120000],
+      "ideal_duration": [3, 6],
+      "best_seasons": ["spring", "fall"]
+  },
+  {
+      "name": "Salzburg",
+      "country": "Austria",
+      "tags": ["music", "history", "culture", "nature"],
+      "budget_range": [70000, 160000],
+      "ideal_duration": [3, 5],
+      "best_seasons": ["spring", "summer"]
+  },
+  {
+      "name": "Interlaken",
+      "country": "Switzerland",
+      "tags": ["adventure", "nature", "sports", "photography"],
+      "budget_range": [80000, 180000],
+      "ideal_duration": [4, 7],
+      "best_seasons": ["summer", "fall"]
+  }
+]
