@@ -3,12 +3,17 @@ import requests
 import json
 import os
 import re
-from agent.state import AgentState  # ✅ Import AgentState model
+from dotenv import load_dotenv
 
-# Ensure API Key is set
-api_key = os.environ["MISTRAL_API_KEY"] = "Rj6ZSCOL065j9Aj8xlOTjXhVOJehMX1l"
+from agent.state import AgentState  # Import AgentState model
+
+# Load environment variables
+load_dotenv()
+
+# Fetch API keys securely
+api_key = os.getenv("MISTRAL_API_KEY")
 if not api_key:
-    raise ValueError("❌ MISTRAL_API_KEY is missing. Set it in your environment variables.")
+    raise ValueError(" MISTRAL_API_KEY is missing. Set it in your environment variables.")
 
 # Mistral API URL
 MISTRAL_API_URL = "https://api.mistral.ai/v1/chat/completions"
@@ -18,7 +23,7 @@ def extract_preferences(state: AgentState) -> AgentState:
        Also handles greetings and asks for travel details if missing.
     """
 
-    user_input = state.user_input.strip().lower()  # ✅ Normalize input
+    user_input = state.user_input.strip().lower()  #  Normalize input
 
     system_prompt = """
     You are a smart travel assistant. Your task is to do two things:
@@ -59,32 +64,32 @@ def extract_preferences(state: AgentState) -> AgentState:
         response_data = response.json()
         extracted_text = response_data["choices"][0]["message"]["content"].strip()
 
-        # ✅ Check if response is a greeting or JSON
+        # Check if response is a greeting or JSON
         if extracted_text.startswith("{") and extracted_text.endswith("}"):
             try:
                 preferences = json.loads(extracted_text)  # Convert to dictionary
                 
-                # ✅ Ensure duration is an integer
+                #  Ensure duration is an integer
                 if "duration" in preferences:
                     preferences["duration"] = int(re.sub(r"\D", "", str(preferences["duration"])))
 
-                # ✅ Ensure budget is an integer
+                #  Ensure budget is an integer
                 if "budget" in preferences:
                     preferences["budget"] = int(re.sub(r"\D", "", str(preferences["budget"])))
 
-                # ✅ Update state with extracted preferences
+                #  Update state with extracted preferences
                 state.update_preferences(preferences)
 
             except json.JSONDecodeError:
-                print("⚠️ JSON Parsing Failed. Response might not be in correct format.")
+                # print(" JSON Parsing Failed. Response might not be in correct format.")
                 state.response = "I'm having trouble processing your request. Please try again."
         
         else:
-            # ✅ Handle greetings or non-JSON responses
+            #  Handle greetings or non-JSON responses
             state.response = extracted_text
 
     else:
-        print("❌ API Error:", response.text)
+        print(" API Error:", response.text)
         state.response = "There was an issue with processing your request."
 
-    return state  # ✅ Return updated state
+    return state  # Return updated state

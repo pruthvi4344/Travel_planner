@@ -1,9 +1,13 @@
 import requests
 import json, os
 from agent.state import AgentState
+from dotenv import load_dotenv
 
-# Ensure API Key is set
-api_key = os.environ["MISTRAL_API_KEY"] = "Rj6ZSCOL065j9Aj8xlOTjXhVOJehMX1l"
+# Load environment variables
+load_dotenv()
+
+# Fetch API keys securely
+api_key = os.getenv("MISTRAL_API_KEY")
 if not api_key:
     raise ValueError("❌ MISTRAL_API_KEY is missing. Set it in your environment variables.")
 

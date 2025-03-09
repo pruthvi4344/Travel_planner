@@ -30,7 +30,7 @@ def find_destinations(state: AgentState) -> dict:
     matched_destinations = []
     alternative_destinations = []
 
-    print(f"🔍 Debug: Received Preferences in find_destinations.py: {preferences}")
+    # print(f" Received Preferences in find_destinations.py: {preferences}")
 
     for destination in destinations:
         # Extract user preferences
@@ -59,18 +59,18 @@ def find_destinations(state: AgentState) -> dict:
         flexible_duration = ideal_duration[0] * 0.8 <= user_duration <= ideal_duration[1] * 1.2
         partial_tag_match = bool(set(user_tags) & set(destination_tags)) or not user_tags
 
-        # ✅ Strong match (Exact match)
+        #  Strong match (Exact match)
         if budget_match and duration_match and tag_match and country_match:
             matched_destinations.append(destination)
-        # ✅ Alternative match (Flexible match)
+        #  Alternative match (Flexible match)
         elif flexible_budget and flexible_duration and partial_tag_match:
             alternative_destinations.append(destination)
 
-    # ✅ If no perfect match, return alternative recommendations
+    #  If no perfect match, return alternative recommendations
     if not matched_destinations:
         matched_destinations = alternative_destinations
 
-    # ✅ Store structured data
+    #  Store structured data
     structured_destinations = []
     for dest in matched_destinations:
         structured_destinations.append({
@@ -82,21 +82,21 @@ def find_destinations(state: AgentState) -> dict:
             "best_time": dest.get("best_time", "N/A")
         })
 
-    # ✅ Generate a user-friendly message  
+    # create a user-friendly message  
     if structured_destinations:
         response_message = "🌍 Based on your preferences, here are some great destinations:\n\n"
         for idx, dest in enumerate(structured_destinations, start=1):
             response_message += (
-                f"{idx}️⃣ **{dest['name']}**, {dest['country']}\n"
+                f"{idx}️⃣ *{dest['name']}, {dest['country']}\n"
                 # f"   🌤 Best Time: {dest['best_time']}\n"
                 f"   🎯 Activities: {', '.join(dest['activities'])}\n"
                 f"   💰 Budget: {dest['budget']}\n"
                 f"   📅 Recommended Duration: {dest['duration']}\n\n"
             )
     else:
-        response_message = "❌ Sorry, no exact matches found! Try different preferences."
+        response_message = " Sorry, no exact matches found! Try different preferences."
 
-    # ✅ Store response in `destination_message`
+    # Store response in `destination_message`
     state.destinations = structured_destinations
     state_dict = state.model_dump()  
     state_dict["destination_message"] = response_message  

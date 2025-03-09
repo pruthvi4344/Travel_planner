@@ -81,26 +81,23 @@ def handle_post_itinerary_options(state: AgentState):
 def main():
     print("\n🚀 Welcome to the Travel Planner AI Agent!")
     state = AgentState()
+    user_input = input("\n📝 Tell me about your trip (budget, duration, interests): ")
+    state.user_input = user_input
 
-    while True:
-        user_input = input("\n📝 Tell me about your trip (budget, duration, interests): ")
-        state.user_input = user_input
+    print("\n🔍 Extracting Preferences...")
+    state = extract_preferences(state)
 
-        print("\n🔍 Extracting Preferences...")
-        state = extract_preferences(state)
+    # ✅ Handle greeting responses
+    if state.response:
+        print("\n🤖 AI Response:", state.response)
+        return  # Stops execution if it's just a greeting
 
-        # ✅ If it's a greeting, respond and continue asking for details
-        if state.response:
-            print("\n🤖 AI Response:", state.response)
-            continue  # Loop back to ask for travel details again
+    # ✅ Check if preferences were extracted
+    if not state.preferences or not any(state.preferences.values()):
+        print("⚠️ No valid travel details found! Please provide budget, duration, and interests.")
+        return main()
 
-        # ✅ Check if preferences were extracted correctly
-        if not state.preferences or not any(state.preferences.values()):
-            print("⚠️ No valid travel details found! Please provide budget, duration, and interests.")
-            continue  # Loop back to ask again
-
-        print("✅ Preferences Extracted:", state.preferences)
-        break  # Exit loop when valid preferences are extracted
+    print("✅ Preferences Extracted:", state.preferences)
 
     print("\n🔍 Finding Suitable Destinations...")
     state_dict = find_destinations(state)
@@ -110,7 +107,6 @@ def main():
     state.destinations = state_dict.get("destinations", [])
 
     process_user_choice(state)
-
 
 if __name__ == "__main__":
     main()
