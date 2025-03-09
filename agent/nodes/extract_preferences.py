@@ -14,26 +14,29 @@ if not api_key:
 MISTRAL_API_URL = "https://api.mistral.ai/v1/chat/completions"
 
 def extract_preferences(state: AgentState) -> AgentState:
-    """Extracts travel-related preferences from user input using Mistral API."""
+    """Extracts travel-related preferences from user input using Mistral API.
+       Also handles greetings and asks for travel details if missing.
+    """
 
-    user_input = state.user_input  # Get input from AgentState
+    user_input = state.user_input.strip().lower()  # ✅ Normalize input
 
     system_prompt = """
-    Extract travel-related preferences from the given text in JSON format with keys:
-    "tags" (interest-based locations like shopping, nightlife),
-    "duration" (number of days as an integer),
-    "budget" (amount as an integer).
-    "country"(if country is mentioned add field in output.)
-    "name"(if any city is mentioned give it as a output of name)
-
-    Example output:
+    You are a smart travel assistant. Your task is to do two things:
+    
+    1. If the user is greeting (like "Hello", "Hi", "Good morning"), respond with:
+       "Hello! I can help you plan a trip. Tell me your budget, duration, and interests, and I'll suggest the best places!"
+       
+    2. If the user asks about a trip, extract travel preferences in **strict JSON format**:
     {
         "tags": ["shopping", "nightlife"],
         "duration": 5,
         "budget": 20000,
-        "country": India,
-        "name": Jaipur,
+        "country": "India",
+        "name": "Jaipur"
     }
+
+    - **Always return a valid JSON.**  
+    - **Do NOT wrap the response in markdown code blocks (` ```json ... ``` `).**
     """
 
     payload = {
@@ -50,36 +53,38 @@ def extract_preferences(state: AgentState) -> AgentState:
         "Content-Type": "application/json"
     }
 
-    # ✅ Send request
     response = requests.post(MISTRAL_API_URL, headers=headers, data=json.dumps(payload))
 
     if response.status_code == 200:
         response_data = response.json()
-        extracted_text = response_data["choices"][0]["message"]["content"]
+        extracted_text = response_data["choices"][0]["message"]["content"].strip()
 
-        # ✅ Remove Markdown code block (```json ... ```)
-        extracted_text = re.sub(r"```json\n(.*?)\n```", r"\1", extracted_text, flags=re.DOTALL)
+        # ✅ Check if response is a greeting or JSON
+        if extracted_text.startswith("{") and extracted_text.endswith("}"):
+            try:
+                preferences = json.loads(extracted_text)  # Convert to dictionary
+                
+                # ✅ Ensure duration is an integer
+                if "duration" in preferences:
+                    preferences["duration"] = int(re.sub(r"\D", "", str(preferences["duration"])))
 
-        try:
-            preferences = json.loads(extracted_text)  # Convert to dictionary
-            print(preferences)
-            # ✅ Fix: Ensure duration is  an integer
-            if "duration" in preferences and isinstance(preferences["duration"], list):
-                duration_str = preferences["duration"][0]  # Extract first element
-                preferences["duration"] = int(re.sub(r"\D", "", duration_str))  # Remove non-numeric characters
+                # ✅ Ensure budget is an integer
+                if "budget" in preferences:
+                    preferences["budget"] = int(re.sub(r"\D", "", str(preferences["budget"])))
 
-            # ✅ Fix: Ensure budget is an integer
-            if "budget" in preferences and isinstance(preferences["budget"], list):
-                preferences["budget"] = int(preferences["budget"][0])  # Convert string to int
+                # ✅ Update state with extracted preferences
+                state.update_preferences(preferences)
 
-        except json.JSONDecodeError:
-            print("⚠️ JSON Parsing Failed. Response might not be in correct format.")
-            preferences = {"tags": [], "duration": 0, "budget": 0}
-
-        # ✅ Update state with extracted preferences
-        state.update_preferences(preferences)
+            except json.JSONDecodeError:
+                print("⚠️ JSON Parsing Failed. Response might not be in correct format.")
+                state.response = "I'm having trouble processing your request. Please try again."
+        
+        else:
+            # ✅ Handle greetings or non-JSON responses
+            state.response = extracted_text
 
     else:
         print("❌ API Error:", response.text)
+        state.response = "There was an issue with processing your request."
 
-    return state  # Return updated state
+    return state  # ✅ Return updated state
