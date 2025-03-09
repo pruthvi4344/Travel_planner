@@ -6,7 +6,7 @@ from agent.state import AgentState
 from agent.nodes.extract_preferences import extract_preferences
 from agent.nodes.find_destinations import find_destinations
 from agent.nodes.create_itinerary import create_itinerary
-from agent.nodes.handle_followup import handle_followup  # ✅ Import follow-up handling
+from agent.nodes.handle_followup import handle_followup  #  Import follow-up handling
 
 def process_user_choice(state: AgentState):
     """
@@ -55,7 +55,7 @@ def process_user_choice(state: AgentState):
             print("\n👋 Exiting Travel Planner. Have a great day!")
             exit(0)
         else:
-            print("⚠️ Invalid input. Please enter 1, 2, or 3.")
+            print(" Invalid input. Please enter 1, 2, or 3.")
 
 def handle_post_itinerary_options(state: AgentState):
     """Handles user choices after itinerary generation, including follow-ups."""
@@ -63,20 +63,20 @@ def handle_post_itinerary_options(state: AgentState):
         user_input = input("\n👉 Enter 1 for new recommendations, 2 for follow-up questions, 3 to exit: ").strip()
 
         if user_input == "1":
-            print("\n🔄 Restarting for new recommendations...")
+            print("\n Restarting for new recommendations...")
             return main()
 
         elif user_input == "2":
             user_question = input("\n💬 Ask your follow-up question: ")
             state.user_input = user_question
-            followup_response = handle_followup(state)  # ✅ Call follow-up handler
+            followup_response = handle_followup(state)  # Call follow-up handler
             print("\n🤖 AI Response:", followup_response.get("response", "No response received."))
 
         elif user_input == "3":
             print("\n👋 Thank you for using the Travel Planner AI Agent! Have a great trip! ✈️")
             exit(0)
         else:
-            print("❌ Invalid input. Please enter 1, 2, or 3.")
+            print(" Invalid input. Please enter 1, 2, or 3.")
 
 def main():
     print("\n🚀 Welcome to the Travel Planner AI Agent!")
@@ -84,25 +84,25 @@ def main():
     user_input = input("\n📝 Tell me about your trip (budget, duration, interests): ")
     state.user_input = user_input
 
-    print("\n🔍 Extracting Preferences...")
+    # print("\n🔍 Extracting Preferences...")
     state = extract_preferences(state)
 
-    # ✅ Handle greeting responses
+    #  Handle greeting responses
     if state.response:
         print("\n🤖 AI Response:", state.response)
         return  # Stops execution if it's just a greeting
 
-    # ✅ Check if preferences were extracted
+    #  Check if preferences were extracted
     if not state.preferences or not any(state.preferences.values()):
-        print("⚠️ No valid travel details found! Please provide budget, duration, and interests.")
+        print(" No valid travel details found! Please provide budget, duration, and interests.")
         return main()
 
-    print("✅ Preferences Extracted:", state.preferences)
+    # print("✅ Preferences Extracted:", state.preferences)
 
     print("\n🔍 Finding Suitable Destinations...")
     state_dict = find_destinations(state)
     destination_message = state_dict.get("destination_message", "No recommendations found.")
-    print("\n📢 Travel Recommendations:\n")
+    print("\n Travel Recommendations:\n")
     print(destination_message)
     state.destinations = state_dict.get("destinations", [])
 
