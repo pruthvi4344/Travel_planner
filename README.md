@@ -1,20 +1,19 @@
-# 🌍 Travel Planner AI Agent
-
-An AI-powered travel planning assistant that extracts user preferences, finds suitable destinations, generates itineraries, and provides follow-up support. Built using **LangChain** and **LangGraph**.
+🌍 **Travel Planner AI Agent**  
+An AI-powered travel planning assistant that extracts user preferences, finds suitable destinations, generates itineraries, and provides follow-up support. Built using LangChain and LangGraph.
 
 ---
 
-## ✨ Features  
+### ✨ **Features**
 ✅ Extracts user preferences from input  
 ✅ Finds the best travel destinations  
 ✅ Generates complete itineraries  
 ✅ Handles follow-up questions  
 ✅ Uses LangGraph for structured workflow  
-✅ Includes **unit tests** to verify node functionality  
+✅ Includes unit tests to verify node functionality  
 
 ---
 
-## 📂 Project Structure  
+### 📂 **Project Structure**
 ```
 travel_planner/
 ├── main.py                  # Entry point for the application
@@ -40,30 +39,36 @@ travel_planner/
 
 ---
 
-## ⚙️ Installation  
-
-1. **Clone the repository**  
-   ```bash
-   git clone https://github.com/pruthvi4344/Travel_planner.git
-   cd travel_planner
-   ```
-
-2. **Create and activate a virtual environment**  
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # macOS/Linux
-   venv\Scripts\activate     # Windows
-   ```
-
-3. **Install dependencies**  
-   ```bash
-   pip install -r req.txt
-   ```
+### ⚙️ **Installation**
+Clone the repository:  
+```bash
+git clone https://github.com/pruthvi4344/Travel_planner.git
+cd travel_planner
+```
+Create and activate a virtual environment:  
+```bash
+python -m venv venv
+source venv/bin/activate  # macOS/Linux
+venv\Scripts\activate     # Windows
+```
+Install dependencies:  
+```bash
+pip install -r req.txt
+```
 
 ---
 
-## 🚀 Usage  
+### 🔑 **API Keys for Evaluation**
+For the evaluation team, the **Mistral API Key** and **Weather API Key** have been included in the repository.  
+These keys are provided **only for testing purposes** and can **not be used in production**.  
 
+⚠️ **Important:**
+- These keys might be revoked after the evaluation process.
+- For future use, consider storing API keys securely in an `.env` file.
+
+---
+
+### 🚀 **Usage**
 Run the main script:  
 ```bash
 python main.py
@@ -71,12 +76,14 @@ python main.py
 
 ---
 
-## 🧪 Running Tests  
+### 🧪 **Running Tests**
+To ensure that the nodes are working correctly, run the test suite:
 
-To ensure that the **nodes** are working correctly, run the test suite:  
-
-### Run all tests  
-run individual test files using:  
+Run all tests:
+```bash
+pytest tests/
+```
+Run individual test files using:
 ```bash
 python -m tests.test_create_itinerary
 python -m tests.test_find_destination
@@ -86,21 +93,21 @@ python -m tests.test_handle_followup
 
 ---
 
-## 🛠️ What Do These Tests Verify?  
-
-| **Test File**                 | **Purpose** |
-|-------------------------------|------------|
-| `test_create_itinerary.py`     | Checks if itinerary generation is working correctly. |
-| `test_find_destination.py`     | Verifies if the destination search returns relevant locations. |
-| `test_extract_preferences.py`  | Tests whether user preferences are correctly extracted. |
-| `test_handle_followup.py`      | Ensures follow-up questions are handled properly. |
+### 🛠️ **What Do These Tests Verify?**
+| Test File                     | Purpose                                      |
+|-------------------------------|----------------------------------------------|
+| `test_create_itinerary.py`    | Checks if itinerary generation is working correctly. |
+| `test_find_destination.py`    | Verifies if the destination search returns relevant locations. |
+| `test_extract_preferences.py` | Tests whether user preferences are correctly extracted. |
+| `test_handle_followup.py`     | Ensures follow-up questions are handled properly. |
 
 ---
 
-## 🤝 Contributing  
+### 🤝 **Contributing**
 Feel free to fork the project, make improvements, and submit a pull request.
 
 ---
 
-## 📧 Contact  
-For any questions, reach out via [pruthvirathod2002@gmail.com].  
+### 📧 **Contact**
+For any questions, reach out via [pruthvirathod2002@gmail.com](mailto:pruthvirathod2002@gmail.com).
+
