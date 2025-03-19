@@ -4,18 +4,19 @@ An AI-powered travel planning assistant that extracts user preferences, finds su
 ---
 
 ## ✨ **Current Features**
-**✅ Smart Destination Search – Finds destinations based on at least two user-provided parameters (e.g., budget, duration).**
-✅ Itinerary Generation – Creates detailed and personalized trip plans based on selected destinations.
-✅ Follow-Up Support – Users can refine their plans or get additional travel details seamlessly.
-✅ Structured Workflow with LangGraph – Ensures a systematic and scalable approach to travel planning.
-✅ Comprehensive Testing – Unit tests verify the correctness and reliability of various components.
+
+**✅ Smart Destination Search** – Finds destinations based on at least two user-provided parameters (e.g., budget, duration).  
+✅ **Itinerary Generation** – Creates detailed and personalized trip plans based on selected destinations.  
+✅ **Follow-Up Support** – Users can refine their plans or get additional travel details seamlessly.  
+✅ **Structured Workflow with LangGraph** – Ensures a systematic and scalable approach to travel planning.  
+✅ **Comprehensive Testing** – Unit tests verify the correctness and reliability of various components.  
 
 ---
 
 ## 🔮 **Future Improvements**
 
 ### 🔹 **Enhancing Destination Discovery**
--  If a user provides only one parameter (e.g., budget), the system will prompt for additional details (such as interests or preferred activities) to improve recommendations.
+- If a user provides only one parameter (e.g., budget), the system will prompt for additional details (such as interests or preferred activities) to improve recommendations.
 
 ### 🔹 **Memory & Session Handling**
 - Use a **Vector Database** to store previous chat interactions, enabling the model to recall past user preferences.
@@ -66,6 +67,7 @@ travel_planner/
 ---
 
 ## ⚙️ **Installation**
+
 Clone the repository:
 ```bash
 git clone https://github.com/pruthvi4344/Travel_planner.git
@@ -87,7 +89,7 @@ pip install -r req.txt
 ---
 
 ## 🔑 **API Keys for Evaluation**
-For the evaluation team, the **Mistral API Key** and **Weather API Key** have been included in the repository.
+For the evaluation team, the **Mistral API Key** and **Weather API Key** have been included in the repository.  
 These keys are provided **only for testing purposes** and cannot be used in production.
 
 ⚠️ **Important:**
@@ -97,6 +99,7 @@ These keys are provided **only for testing purposes** and cannot be used in prod
 ---
 
 ## 🚀 **Usage**
+
 Run the main script:
 ```bash
 python main.py
@@ -105,10 +108,12 @@ python main.py
 ---
 
 ## 🧪 **Running Tests**
+
 To ensure that the nodes are working correctly, run the test suite:
 ```bash
 python -m unittest discover tests
 ```
+
 Run individual test files using:
 ```bash
 python -m tests.test_create_itinerary
@@ -120,6 +125,7 @@ python -m tests.test_handle_followup
 ---
 
 ## 🛠️ **What Do These Tests Verify?**
+
 | Test File                      | Purpose                                               |
 |--------------------------------|------------------------------------------------------|
 | test_create_itinerary.py       | Checks if itinerary generation is working correctly. |
@@ -130,10 +136,12 @@ python -m tests.test_handle_followup
 ---
 
 ## 🤝 **Contributing**
+
 Feel free to fork the project, make improvements, and submit a pull request.
 
 ---
 
 ## 📧 **Contact**
+
 For any questions, reach out via **pruthvirathod2002@gmail.com**.
 
