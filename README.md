@@ -109,11 +109,6 @@ python main.py
 
 ## 🧪 **Running Tests**
 
-To ensure that the nodes are working correctly, run the test suite:
-```bash
-python -m unittest discover tests
-```
-
 Run individual test files using:
 ```bash
 python -m tests.test_create_itinerary
