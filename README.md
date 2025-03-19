@@ -4,7 +4,7 @@ An AI-powered travel planning assistant that extracts user preferences, finds su
 ---
 
 ## ✨ **Current Features**
-✅ Smart Destination Search – Finds destinations based on at least two user-provided parameters (e.g., budget, duration).
+**✅ Smart Destination Search – Finds destinations based on at least two user-provided parameters (e.g., budget, duration).**
 ✅ Itinerary Generation – Creates detailed and personalized trip plans based on selected destinations.
 ✅ Follow-Up Support – Users can refine their plans or get additional travel details seamlessly.
 ✅ Structured Workflow with LangGraph – Ensures a systematic and scalable approach to travel planning.
