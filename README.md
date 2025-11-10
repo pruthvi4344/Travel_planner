@@ -138,5 +138,5 @@ Feel free to fork the project, make improvements, and submit a pull request.
 
 ## 📧 **Contact**
 
-For any questions, reach out via **pruthvirathod2002@gmail.com**.
+For any questions, reach out via **pruthvirathod2002@gmail.com**. 
 
