@@ -8,6 +8,7 @@ from agent.nodes.find_destinations import find_destinations
 from agent.nodes.create_itinerary import create_itinerary
 from agent.nodes.handle_followup import handle_followup  #  Import follow-up handling
 
+// user choice procedure
 def process_user_choice(state: AgentState):
     """
     Handles user's choice after getting recommendations or an itinerary.
