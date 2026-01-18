@@ -47,7 +47,7 @@ def find_destinations(state: AgentState) -> dict:
         destination_country = destination.get("country", "").lower()
         destination_name = destination.get("name", "").lower()
 
-        # Matching criteria  
+        # Matching criteria section
         budget_match = destination_budget[0] <= user_budget <= destination_budget[1]
         duration_match = ideal_duration[0] <= user_duration <= ideal_duration[1]
         tag_match = bool(set(user_tags) & set(destination_tags))
