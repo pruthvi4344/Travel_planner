@@ -27,6 +27,7 @@ def generate_itinerary_mistral(destination: str, duration: int) -> list:
     """
 
     # Constructing the prompt for Mistral
+    # imprvoed the prompt
     prompt = f"""
     You are a travel expert. Create a detailed {duration}-day itinerary for a trip to {destination}.
     Include daily activities, recommended places to visit, and local experiences.
