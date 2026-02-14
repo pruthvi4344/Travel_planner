@@ -18,6 +18,7 @@ if not api_key:
 # Mistral API URL
 MISTRAL_API_URL = "https://api.mistral.ai/v1/chat/completions"
 
+#extracting the preferences
 def extract_preferences(state: AgentState) -> AgentState:
     """Extracts travel-related preferences from user input using Mistral API.
        Also handles greetings and asks for travel details if missing.
