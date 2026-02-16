@@ -9,7 +9,8 @@ def load_destinations(file_path: str = "data/destinations.json") -> list:
     except Exception as e:
         print(f"Error loading destinations: {e}")
         return []
-
+        
+# improved the finding destination
 def find_destinations(state: AgentState) -> dict:
     """
     Find suitable destinations based on user preferences and return structured data.
