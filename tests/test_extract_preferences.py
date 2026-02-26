@@ -2,6 +2,7 @@ import time
 from agent.state import AgentState
 from agent.nodes.extract_preferences import extract_preferences
 
+# test case performed
 def test_extract_preferences():
     """Test the extract_preferences function with actual API calls."""
 
