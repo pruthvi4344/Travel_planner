@@ -1,6 +1,7 @@
 from agent.state import AgentState
 from agent.nodes.find_destinations import find_destinations
 
+#test cased included for findinf destinations
 def test_find_destinations():
     """Test find_destinations function with different preferences."""
 
