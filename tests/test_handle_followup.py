@@ -8,7 +8,7 @@ def format_followup_response(response):
 
     return f"Question:  {response['user_input']}\n" \
            f"AI Response:  {response['response']}\n"
-
+#test case for follow-up
 def test_handle_followup():
     """Tests handle_followup function with different user questions."""
     
