@@ -14,6 +14,7 @@ if not api_key:
 # Mistral API URL
 MISTRAL_API_URL = "https://api.mistral.ai/v1/chat/completions"
 
+# itinerary generated
 def generate_itinerary_mistral(destination: str, duration: int) -> list:
     """
     Generate a day-by-day itinerary for the given destination using Mistral API.
