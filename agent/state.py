@@ -1,6 +1,7 @@
 from pydantic import BaseModel
 from typing import Dict, List, Any,Optional
 
+# state of agent
 class AgentState(BaseModel):
     user_input: str = ""  # Stores the latest user input
     preferences: Dict[str, Any] = {}  # Stores user preferences
