@@ -1,6 +1,7 @@
 from agent.state import AgentState
 from agent.nodes.create_itinerary import create_itinerary
 
+# formated the itinerary
 def format_itinerary_text(itinerary):
     """Convert itinerary into a user-friendly text paragraph."""
     if not itinerary or "plan" not in itinerary:
