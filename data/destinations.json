@@ -143,6 +143,14 @@
       "ideal_duration": [4, 8],
       "best_seasons": ["spring", "fall"]
   },
+    {
+      "name": "Machu Picchu",
+      "country": "Peru",
+      "tags": ["adventure", "history", "hiking", "photography"],
+      "budget_range": [60000, 140000],
+      "ideal_duration": [4, 8],
+      "best_seasons": ["spring", "fall"]
+  },
   {
       "name": "Bali",
       "country": "Indonesia",
