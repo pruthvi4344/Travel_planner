@@ -10,7 +10,7 @@ class AgentState(BaseModel):
     destination_message: Optional[str] = None  # ✅ Add this field
     history: List[Dict[str, str]] = []  # Stores conversation history
     response: str = ""  # Stores response for follow-ups
-
+     # call update preferences
     def update_preferences(self, new_preferences: Dict[str, Any]):
         """Update user preferences."""
         self.preferences.update(new_preferences)
