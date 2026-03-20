@@ -15,6 +15,7 @@ class AgentState(BaseModel):
         """Update user preferences."""
         self.preferences.update(new_preferences)
 
+    # add destination updated
     def add_destination(self, destination: Dict[str, Any]):
         """Add a recommended destination."""
         self.destinations.append(destination)
