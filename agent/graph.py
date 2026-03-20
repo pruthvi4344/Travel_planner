@@ -16,7 +16,7 @@ def build_travel_agent():
 
     workflow = StateGraph(AgentState)
 
-    # Add nodes
+    # add node
     workflow.add_node("extract_preferences", extract_preferences)
     workflow.add_node("find_destinations", find_destinations)
     workflow.add_node("create_itinerary", create_itinerary)
