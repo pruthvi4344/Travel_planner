@@ -36,7 +36,7 @@ def build_travel_agent():
     workflow.add_conditional_edges("create_itinerary", next_step)
     workflow.add_edge("handle_followup", "end")  # Explicitly ending at 'end'
 
-    # Set entry point
+    # defining entry point
     workflow.set_entry_point("extract_preferences")
 
     return workflow.compile()
