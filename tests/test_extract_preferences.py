@@ -42,6 +42,6 @@ def test_extract_preferences():
         else:  # For greetings, the response should be non-empty
             assert updated_state.response.startswith("Hello!"), " Greeting response incorrect!"
 
-# Run the test
+# testing the run case
 if __name__ == "__main__":
     test_extract_preferences()
