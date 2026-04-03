@@ -20,6 +20,7 @@ class AgentState(BaseModel):
         """Add a recommended destination."""
         self.destinations.append(destination)
 
+    # itinerary state
     def set_itinerary(self, itinerary: Dict[str, Any]):
         """Set itinerary details."""
         self.itinerary = itinerary
