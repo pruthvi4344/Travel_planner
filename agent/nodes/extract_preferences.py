@@ -24,6 +24,7 @@ def extract_preferences(state: AgentState) -> AgentState:
        Also handles greetings and asks for travel details if missing.
     """
 
+    # taking user input
     user_input = state.user_input.strip().lower()  #  Normalize input
 
     system_prompt = """
