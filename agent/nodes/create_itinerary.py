@@ -85,7 +85,7 @@ def generate_itinerary_mistral(destination: str, duration: int) -> list:
     except requests.exceptions.RequestException as e:
         print(f"❌ Error fetching itinerary from Mistral API: {e}")
         return []
-
+# creating itinerary
 def create_itinerary(state: AgentState) -> dict:
     """
     Create a detailed itinerary for the selected destination using Mistral API.
