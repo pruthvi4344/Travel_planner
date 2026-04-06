@@ -61,6 +61,7 @@ def extract_preferences(state: AgentState) -> AgentState:
         "Content-Type": "application/json"
     }
 
+    # response from api
     response = requests.post(MISTRAL_API_URL, headers=headers, data=json.dumps(payload))
 
     if response.status_code == 200:
