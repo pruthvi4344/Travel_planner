@@ -113,6 +113,7 @@ def create_itinerary(state: AgentState) -> dict:
         print("⚠️ Warning: No itinerary generated. Returning empty plan.")
         return state.model_dump()
 
+    # itinerary data
     state.itinerary = {
         "destination": selected_destination,
         "plan": itinerary_plan
