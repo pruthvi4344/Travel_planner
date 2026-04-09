@@ -11,7 +11,7 @@ load_dotenv()
 api_key = os.getenv("MISTRAL_API_KEY")
 WEATHER_API_KEY = os.getenv("WEATHER_API_KEY")
 
-
+# error handling for mistral api key
 if not api_key:
     raise ValueError(" MISTRAL_API_KEY is missing. Set it in your environment variables.")
 
