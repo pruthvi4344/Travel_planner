@@ -23,6 +23,7 @@ if not WEATHER_API_KEY:
 MISTRAL_API_URL = "https://api.mistral.ai/v1/chat/completions"
 WEATHER_API_URL = "http://api.weatherapi.com/v1/forecast.json"
 
+# fetching weather data
 def get_weather(destination_name):
     """
     Fetches a 3-day weather forecast for the given destination.
