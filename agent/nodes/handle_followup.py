@@ -15,6 +15,7 @@ WEATHER_API_KEY = os.getenv("WEATHER_API_KEY")
 if not api_key:
     raise ValueError(" MISTRAL_API_KEY is missing. Set it in your environment variables.")
 
+# error handling for weather api key
 if not WEATHER_API_KEY:
     raise ValueError(" WEATHER_API_KEY is missing. Set it in your environment variables.")
 
