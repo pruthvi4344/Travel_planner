@@ -66,6 +66,7 @@ def get_weather(destination_name):
 
     return forecast_message
 
+# handle followup
 def handle_followup(state: AgentState) -> dict:
     """
     Handles user follow-up questions and integrates weather data.
