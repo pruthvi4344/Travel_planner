@@ -78,6 +78,7 @@ def handle_followup(state: AgentState) -> dict:
     Returns:
         dict: Updated state with response.
     """
+    # normalize the user input
     user_question = state.user_input.lower().strip()
 
     if not state.destinations:
