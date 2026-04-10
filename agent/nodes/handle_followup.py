@@ -45,13 +45,14 @@ def get_weather(destination_name):
     response = requests.get(WEATHER_API_URL, params=params)
     
     if response.status_code != 200:
-        # debugging the weather data error
+        # debugging the weather api error
         print(" WEATHER API ERROR:", response.text)  
         return " Unable to fetch weather forecast. Please try again."
 
     data = response.json()
     
     if "forecast" not in data:
+         # debugging the weather data error
         print(" WEATHER API RESPONSE MISSING FORECAST DATA:", data)  #  Debugging
         return " No weather data available."
 
