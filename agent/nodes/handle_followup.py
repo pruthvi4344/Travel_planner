@@ -89,7 +89,7 @@ def handle_followup(state: AgentState) -> dict:
     selected_destination = state.destinations[0]
     destination_name = selected_destination.get("name", "Unknown Location")
 
-    # Get weather info
+    # getting the weather information
     weather_info = get_weather(destination_name)
     # print("\nDEBUG: Weather Info Fetched Successfully!\n", weather_info)  # Debugging
 
