@@ -81,6 +81,7 @@ def handle_followup(state: AgentState) -> dict:
     # normalize the user input
     user_question = state.user_input.lower().strip()
 
+    # error handling for not selecting the destinations
     if not state.destinations:
         state.response = " No selected destination. Please choose a destination first."
         return state.model_dump()
