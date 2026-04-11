@@ -8,7 +8,7 @@ from agent.state import AgentState  #  Import AgentState model
 load_dotenv()
 
 # Fetch API keys securely
-api_key = os.getenv("MISTRAL_API_KEY")
+api_key = os.getenv("MISTRAL_API_KEY") 
 WEATHER_API_KEY = os.getenv("WEATHER_API_KEY") 
 
 # error handling for mistral api key
