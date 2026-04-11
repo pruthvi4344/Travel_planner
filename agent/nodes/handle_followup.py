@@ -87,13 +87,13 @@ def handle_followup(state: AgentState) -> dict:
         return state.model_dump()
 
     selected_destination = state.destinations[0]
-    destination_name = selected_destination.get("name", "Unknown Location")
+    destination_name = selected_destination.get("name", "Unknown Location") 
 
     # getting the weather information
     weather_info = get_weather(destination_name)
     # print("\nDEBUG: Weather Info Fetched Successfully!\n", weather_info)  # Debugging
 
-    #  Mistral AI prompt modification
+    # mistral ai model prompt modification
     system_prompt = f"""
     The user has selected {destination_name} as their travel destination.
     {weather_info}
