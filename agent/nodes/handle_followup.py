@@ -116,8 +116,7 @@ def handle_followup(state: AgentState) -> dict:
         "Content-Type": "application/json"
     }
 
-    
-#  Send request to Mistral API
+    # sending req to mistral api
     response = requests.post(MISTRAL_API_URL, headers=headers, data=json.dumps(payload))
 
     if response.status_code == 200:
