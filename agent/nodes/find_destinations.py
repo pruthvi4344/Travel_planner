@@ -97,7 +97,7 @@ def find_destinations(state: AgentState) -> dict:
     else:
         response_message = " Sorry, no exact matches found! Try different preferences."
 
-    # Store response in `destination_message`
+    # storing the response in destination_message
     state.destinations = structured_destinations
     state_dict = state.model_dump()  
     state_dict["destination_message"] = response_message  
