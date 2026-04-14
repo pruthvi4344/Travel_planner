@@ -59,6 +59,7 @@ def get_weather(destination_name):
     forecast_days = data["forecast"]["forecastday"]
     forecast_message = f"📅 **Weather Forecast for {destination_name} (Next 3 Days):**\n"
 
+    # extracting the data
     for day in forecast_days:
         date = day["date"]
         temp = day["day"]["avgtemp_c"]
