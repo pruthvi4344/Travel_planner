@@ -19,6 +19,7 @@ def test_handle_followup():
         {"name": "Manali", "country": "India", "best_seasons": ["summer", "winter"]}
     ]
 
+    # list of question to test the model
     test_questions = [
         "When is the best season to travel?",
         "What's the weather like?",
