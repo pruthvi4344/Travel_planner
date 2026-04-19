@@ -27,7 +27,7 @@ def extract_preferences(state: AgentState) -> AgentState:
     # taking user input
     user_input = state.user_input.strip().lower()  #  Normalize input
 
-    # propmt
+    # system prompt
     system_prompt = """
     You are a smart travel assistant. Your task is to do two things:
     
