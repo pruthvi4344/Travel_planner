@@ -1,7 +1,7 @@
 from agent.state import AgentState
 from agent.nodes.handle_followup import handle_followup
 
-# formated the response of followup
+# followup response formated
 def format_followup_response(response):
     """Formats the follow-up response in a user-friendly text paragraph."""
     if not response or "response" not in response:
