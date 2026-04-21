@@ -94,6 +94,7 @@ def create_itinerary(state: AgentState) -> dict:
         dict: Updated state with the generated itinerary.
     """
 
+    # error handling for not finding any destinations
     if not state.destinations:
         print("❌ No destinations selected. Cannot create an itinerary.")
         return state.model_dump()
