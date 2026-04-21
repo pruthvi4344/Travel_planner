@@ -57,9 +57,6 @@ def generate_itinerary_mistral(destination: str, duration: int) -> list:
         response.raise_for_status()  # Raise error for bad response
         itinerary_data = response.json()
 
-        # Debugging: Print full API response
-        # print("🔍 Debug: Mistral API Response:", json.dumps(itinerary_data, indent=2))
-
         # Extract content from the response
         itinerary_text = itinerary_data["choices"][0]["message"]["content"].strip()
 
