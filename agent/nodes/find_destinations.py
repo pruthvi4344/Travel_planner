@@ -1,6 +1,7 @@
 import json
 from agent.state import AgentState
 
+# loading all the destinations from json file
 def load_destinations(file_path: str = "data/destinations.json") -> list:
     """Load destinations from a JSON file."""
     try:
