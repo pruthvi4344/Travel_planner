@@ -73,7 +73,7 @@ def extract_preferences(state: AgentState) -> AgentState:
             try:
                 preferences = json.loads(extracted_text)  # Convert to dictionary
                 
-                #  Ensure duration is an integer
+                # making sure that duration value is in the interger form
                 if "duration" in preferences:
                     preferences["duration"] = int(re.sub(r"\D", "", str(preferences["duration"])))
 
