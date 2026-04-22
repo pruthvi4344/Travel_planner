@@ -92,6 +92,7 @@ def extract_preferences(state: AgentState) -> AgentState:
             #  Handle greetings or non-JSON responses
             state.response = extracted_text
 
+    # error handling for api error
     else:
         print(" API Error:", response.text)
         state.response = "There was an issue with processing your request."
